@@ -4,7 +4,7 @@
         "version": "PTDL_v2",
         "update_url": null
     },
-    "exported_at": "2024-05-13T17:26:15-04:00",
+    "exported_at": "2024-05-14T13:27:12-04:00",
     "name": "Endstone",
     "author": "hello@endstone.dev",
     "description": "Endstone is a powerful server software for Minecraft: Bedrock Edition. It provides a high-level plugin API that allows server owners to easily add features to the Bedrock Dedicated Servers.",
@@ -25,7 +25,7 @@
     },
     "scripts": {
         "installation": {
-            "script": "#!\/bin\/bash\r\n# Endstone Installation Script\r\n#\r\n# Server Files: \/mnt\/server\r\napt update\r\napt install -y curl\r\n\r\nmkdir -p \/mnt\/server\r\ncd \/mnt\/server\r\n\r\nif [ ! -f bedrock_server\/server.properties ]; then\r\n    echo -e \"Downloading server.properties\"\r\n    curl -o bedrock_server\/server.properties https:\/\/raw.githubusercontent.com\/EndstoneMC\/pterodactyl\/main\/server.properties\r\nfi\r\n\r\nexport HOME=\/mnt\/server\r\n\r\necho -e \"Installation complete\"\r\nexit 0",
+            "script": "#!\/bin\/bash\r\n# Endstone Installation Script\r\n#\r\n# Server Files: \/mnt\/server\r\napt update\r\napt install -y curl\r\n\r\nmkdir -p \/mnt\/server\r\ncd \/mnt\/server\r\n\r\nmkdir -p bedrock_server\r\nif [ ! -f bedrock_server\/server.properties ]; then\r\n    echo -e \"Downloading server.properties\"\r\n    curl -o bedrock_server\/server.properties https:\/\/raw.githubusercontent.com\/EndstoneMC\/pterodactyl\/main\/server.properties\r\nfi\r\n\r\nexport HOME=\/mnt\/server\r\n\r\necho -e \"Installation complete\"\r\nexit 0",
             "container": "python:3.12-slim-bookworm",
             "entrypoint": "bash"
         }
