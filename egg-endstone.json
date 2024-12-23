@@ -4,12 +4,13 @@
         "version": "PTDL_v2",
         "update_url": null
     },
-    "exported_at": "2024-08-01T06:55:57-04:00",
+    "exported_at": "2024-12-23T16:47:50-05:00",
     "name": "Endstone",
     "author": "hello@endstone.dev",
     "description": "Endstone is a powerful server software for Minecraft: Bedrock Edition. It provides a high-level plugin API that allows server owners to easily add features to the Bedrock Dedicated Servers.",
     "features": [],
     "docker_images": {
+        "Python 3.13": "ghcr.io\/parkervcp\/yolks:python_3.13",
         "Python 3.12": "ghcr.io\/parkervcp\/yolks:python_3.12",
         "Python 3.11": "ghcr.io\/parkervcp\/yolks:python_3.11",
         "Python 3.10": "ghcr.io\/parkervcp\/yolks:python_3.10",
