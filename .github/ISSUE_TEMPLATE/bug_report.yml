@@ -1,0 +1,47 @@
+name: Bug Report
+description: Report a problem with the Endstone Pterodactyl egg
+labels: ["bug"]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What happened? What did you expect to happen?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce
+      description: How can we reproduce the issue?
+      placeholder: |
+        1. Import the egg
+        2. Create a server
+        3. ...
+    validations:
+      required: true
+  - type: dropdown
+    id: panel
+    attributes:
+      label: Panel Software
+      options:
+        - Pterodactyl
+        - Pelican
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: panel-version
+    attributes:
+      label: Panel Version
+      placeholder: "1.11.7"
+  - type: input
+    id: endstone-version
+    attributes:
+      label: Endstone Version
+      placeholder: "endstone==0.11.2"
+  - type: input
+    id: docker-image
+    attributes:
+      label: Docker Image
+      placeholder: "ghcr.io/parkervcp/yolks:python_3.12"

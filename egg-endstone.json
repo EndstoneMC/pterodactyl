@@ -10,23 +10,23 @@
     "description": "Endstone is a powerful server software for Minecraft: Bedrock Edition. It provides a high-level plugin API that allows server owners to easily add features to the Bedrock Dedicated Servers.",
     "features": [],
     "docker_images": {
+        "Python 3.14": "ghcr.io\/parkervcp\/yolks:python_3.14",
         "Python 3.13": "ghcr.io\/parkervcp\/yolks:python_3.13",
         "Python 3.12": "ghcr.io\/parkervcp\/yolks:python_3.12",
         "Python 3.11": "ghcr.io\/parkervcp\/yolks:python_3.11",
-        "Python 3.10": "ghcr.io\/parkervcp\/yolks:python_3.10",
-        "Python 3.9": "ghcr.io\/parkervcp\/yolks:python_3.9"
+        "Python 3.10": "ghcr.io\/parkervcp\/yolks:python_3.10"
     },
     "file_denylist": [],
     "startup": "python -m pip install -U pip && pip install -U \"{{ENDSTONE_VERSION}}\" && python -m endstone -s . -y",
     "config": {
-        "files": "{\r\n    \"server.properties\": {\r\n        \"parser\": \"properties\",\r\n        \"find\": {\r\n            \"server-port\": \"{{server.build.default.port}}\"\r\n        }\r\n    }\r\n}",
-        "startup": "{\r\n    \"done\": \"Server started.\"\r\n}",
+        "files": "{ \"server.properties\": { \"parser\": \"properties\", \"find\": { \"server-port\": \"{{server.build.default.port}}\" } } }",
+        "startup": "{ \"done\": \"Server started.\" }",
         "logs": "{}",
         "stop": "stop"
     },
     "scripts": {
         "installation": {
-            "script": "#!\/bin\/bash\r\n# Endstone Installation Script\r\n#\r\n# Server Files: \/mnt\/server\r\napt update\r\napt install -y curl\r\n\r\nmkdir -p \/mnt\/server\r\ncd \/mnt\/server\r\n\r\nif [ ! -f server.properties ]; then\r\n    echo -e \"Downloading server.properties\"\r\n    curl -o server.properties https:\/\/raw.githubusercontent.com\/EndstoneMC\/pterodactyl\/main\/server.properties\r\nfi\r\n\r\nexport HOME=\/mnt\/server\r\n\r\necho -e \"Installation complete\"\r\nexit 0",
+            "script": "#!\/bin\/bash\n# Endstone Installation Script\n#\n# Server Files: \/mnt\/server\napt update\napt install -y curl\n\nmkdir -p \/mnt\/server\ncd \/mnt\/server\n\nif [ ! -f server.properties ]; then\n    echo -e \"Downloading server.properties\"\n    curl -o server.properties https:\/\/raw.githubusercontent.com\/EndstoneMC\/pterodactyl\/main\/server.properties\nfi\n\nexport HOME=\/mnt\/server\n\necho -e \"Installation complete\"\nexit 0",
             "container": "python:3.12-slim-bookworm",
             "entrypoint": "bash"
         }
@@ -34,7 +34,7 @@
     "variables": [
         {
             "name": "Endstone Version",
-            "description": "The version of endstone to download. \r\n\r\nLeave at \"endstone\" to always get the latest version, or use \"endstone==version\" to use a specific version.",
+            "description": "The version of endstone to install.\n\nLeave at \"endstone\" to always get the latest version, or use \"endstone==version\" to pin a specific version.",
             "env_variable": "ENDSTONE_VERSION",
             "default_value": "endstone",
             "user_viewable": true,
