@@ -20,8 +20,16 @@ The egg automatically installs the latest version of Endstone on first start.
 The `ENDSTONE_VERSION` variable controls which version to install. By default it's set to
 `endstone` which always installs the latest release.
 
-To pin a specific version, set it to `endstone==0.11.2` (replace with the version you want).
-You can find available versions on [PyPI](https://pypi.org/project/endstone/#history).
+Examples:
+
+| Value | Effect |
+|-------|--------|
+| `endstone` | Always install the latest release (default) |
+| `endstone==0.11.2` | Pin a specific version |
+| `https://example.com/endstone-0.12.0-py3-none-any.whl` | Install from a direct URL |
+| `endstone-0.12.0-py3-none-any.whl` | Install a `.whl` file uploaded to the server |
+
+Available versions are listed on [PyPI](https://pypi.org/project/endstone/#history).
 
 ### Docker Image
 
