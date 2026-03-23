@@ -14,4 +14,4 @@ jobs:
         uses: actions/checkout@v6
 
       - name: Validate egg JSON
-        run: python validate_egg.py egg-endstone.json
+        run: python validate.py egg-endstone.json
