@@ -11,23 +11,23 @@ for Minecraft Bedrock Dedicated Server, similar to Bukkit/Spigot/Paper for Java 
 3. Create a new server using the **Endstone** egg
 4. Start the server
 
-The egg automatically installs the latest version of Endstone on first start.
+The egg automatically runs the latest version of Endstone on first start.
 
 ## Configuration
 
 ### Endstone Version
 
-The `ENDSTONE_VERSION` variable controls which version to install. By default it's set to
-`endstone` which always installs the latest release.
+The `ENDSTONE_VERSION` variable controls which version to run. By default it's set to
+`endstone` which always runs the latest release.
 
 Examples:
 
 | Value | Effect |
 |-------|--------|
-| `endstone` | Always install the latest release (default) |
+| `endstone` | Always run the latest release (default) |
 | `endstone==0.11.2` | Pin a specific version |
-| `https://example.com/endstone-0.12.0-py3-none-any.whl` | Install from a direct URL |
-| `endstone-0.12.0-py3-none-any.whl` | Install a `.whl` file uploaded to the server |
+| `https://example.com/endstone-0.12.0-py3-none-any.whl` | Run from a direct URL |
+| `endstone-0.12.0-py3-none-any.whl` | Run a `.whl` file uploaded to the server |
 
 Available versions are listed on [PyPI](https://pypi.org/project/endstone/#history).
 
@@ -63,7 +63,7 @@ Find plugins on [PyPI](https://pypi.org/search/?q=endstone) or build your own us
 ## Updating Endstone
 
 If `ENDSTONE_VERSION` is set to `endstone` (the default), simply restarting the server will
-install the latest version. If you've pinned a version, update the variable and restart.
+run the latest version. If you've pinned a version, update the variable and restart.
 
 ## Documentation
 
